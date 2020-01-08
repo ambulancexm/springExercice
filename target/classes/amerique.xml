@@ -34,16 +34,15 @@
 		<constructor-arg value="10" />
 	</bean>
 
+
 	<bean id="MexiqueService" class="fr.ldnr.thomas.MexiqueService">
 		<constructor-arg value="949" />
-		<constructor-arg>
-<!-- 		<constructor-arg ref="today2"/> -->
-			<bean class="java.time.LocalDate" factory-method="of">
-				<constructor-arg value="2010" />
-				<constructor-arg value="10" />
-				<constructor-arg value="10" />
-			</bean>
-		</constructor-arg>
+		<constructor-arg ref="today2"/>
+	</bean>
+	
+<!-- 	injection d'un bean dans un bean -->
+	<bean id="BresilService" class="fr.ldnr.thomas.BresilService">
+		<property name="aujourdhui" ref="today"/>
 	</bean>
 
 	<bean id="mexiqueInfo" class="java.lang.String"

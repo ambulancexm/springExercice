@@ -28,7 +28,8 @@ public class Main {
 
 		CanadaService cs = (CanadaService) ctx.getBean("CanadaService");
 		UsaService us = (UsaService) ctx.getBean("UsaService");
-
+		BresilService bs = (BresilService) ctx.getBean("BresilService");
+		
 		int jour = 22;
 		int rt = cs.getPrix(jour);
 		System.out.print("pour " + jour + " jour" + (jour <= 1 ? " " : "s ") + " au Canada ");
@@ -61,6 +62,8 @@ public class Main {
 
 		LocalDate ld2 = (LocalDate) ctx.getBean("today2");
 		System.out.println(ld2.getDayOfYear());
+		
+		System.out.println(bs.toString());
 		
 		ctx.close();
 	}
