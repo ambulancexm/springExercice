@@ -16,10 +16,21 @@
 	https://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<bean id="CanadaService" class="fr.ldnr.thomas.CanadaService" />
-	<bean id="UsaService" class="fr.ldnr.thomas.UsaService">
-		<property name="journee" value="10"/>
-		<property name="avion" value="400"/>
-		<property name="promo" value="10"/>
+	
+	<bean id="UsaService" class="fr.ldnr.thomas.UsaService" p:promo="25">
+		<property name="journee" value="10" />
+		<property name="avion">
+			<list>
+				<value>890</value>
+				<value>100</value>
+				<value>600</value>
+			</list>
+		</property>
+<!-- 		<property name="promo" value="10" /> -->
+	</bean>
+	
+	<bean id="dispo" class="java.lang.Integer">
+        <constructor-arg value="10" />
 	</bean>
 
 </beans>

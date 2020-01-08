@@ -28,7 +28,7 @@ public class Main {
 		CanadaService cs = (CanadaService) ctx.getBean("CanadaService");
 		UsaService us = (UsaService) ctx.getBean("UsaService");
 		
-		int jour = 1;
+		int jour = 22;
 		int rt = cs.getPrix(jour);
 		System.out.print("pour "+ jour + " jour" + (jour <= 1 ? " ": "s ") + " au Canada " );
 		if(rt < 0) {
@@ -37,10 +37,17 @@ public class Main {
 			System.out.println("prix " + rt + " €");
 		}
 		
-		
+		System.out.println(us.getJournee()+ " " + us.getPromo());
 
 		System.out.print("pour "+ jour + " jour" + (jour <= 1 ? " ": "s ") + " au USA " );
-		System.out.println("prix " + us.getPrix(jour)+ " €");
+		if(rt < 0) {
+			System.out.println("il n'y a pas de trajet");
+		}else {
+			System.out.println("prix " + us.getPrix(jour)+ " €");
+		}
+		
+		int dispo=(Integer) ctx.getBean("dispo");
+		System.out.println("places dispo " + dispo);
 		
 			
 		
