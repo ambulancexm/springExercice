@@ -49,13 +49,19 @@ public class Main {
 
 		int dispo = (Integer) ctx.getBean("dispo");
 		System.out.println("places dispo " + dispo);
-
-		MexiqueService ms = (MexiqueService) ctx.getBean("MexiqueService");
-		System.out.println(ms.toString());
+//
+//		MexiqueService ms = (MexiqueService) ctx.getBean("MexiqueService");
+//		System.out.println(ms.toString());
+		
+		String mi = (String) ctx.getBean("mexiqueInfo");
+		System.out.println("test " + mi);
 		
 		LocalDate ld = (LocalDate) ctx.getBean("today");
 		System.out.println(ld.getDayOfYear());
 
+		LocalDate ld2 = (LocalDate) ctx.getBean("today2");
+		System.out.println(ld2.getDayOfYear());
+		
 		ctx.close();
 	}
 

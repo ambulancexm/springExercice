@@ -16,8 +16,9 @@
 	https://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<bean id="CanadaService" class="fr.ldnr.thomas.CanadaService" />
-	
-	<bean id="UsaService" class="fr.ldnr.thomas.UsaService" p:promo="25">
+
+	<bean id="UsaService" class="fr.ldnr.thomas.UsaService"
+		p:promo="25">
 		<property name="journee" value="10" />
 		<property name="avion">
 			<list>
@@ -26,18 +27,25 @@
 				<value>600</value>
 			</list>
 		</property>
-<!-- 		<property name="promo" value="10" /> -->
-	</bean>
-	
-	<bean id="dispo" class="java.lang.Integer">
-        <constructor-arg value="10" />
-	</bean>
-	
-	<bean id="MexiqueService" class="fr.ldnr.thomas.MexiqueService">
-	<constructor-arg value="949" />
-	</bean>
-	
-	<bean id="today" class="java.time.LocalDate" factory-method="now">
+		<!-- <property name="promo" value="10" /> -->
 	</bean>
 
+	<bean id="dispo" class="java.lang.Integer">
+		<constructor-arg value="10" />
+	</bean>
+
+	<bean id="MexiqueService" class="fr.ldnr.thomas.MexiqueService">
+		<constructor-arg value="949" />
+	</bean>
+	
+	<bean id="mexiqueInfo" class="java.lang.String" factory-bean="MexiqueService" factory-method="toString" />
+		
+
+	<bean id="today" class="java.time.LocalDate" factory-method="now">
+	</bean>
+	<bean id="today2" class="java.time.LocalDate" factory-method="of">
+	<constructor-arg value="2010"/>
+	<constructor-arg value="10"/>
+	<constructor-arg value="10"/>
+	</bean>
 </beans>
