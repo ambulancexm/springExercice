@@ -15,12 +15,24 @@
 	http://www.springframework.org/schema/tx
 	https://www.springframework.org/schema/tx/spring-tx.xsd">
 	<import resource="classpath:amerique.xml" />
+	
 	<bean id="logAspect" class="fr.ldnr.thomas.aspect.LogAspect"></bean>
 	<aop:config>
 		<aop:aspect ref="logAspect">
-		<aop:before pointcut="execution(* fr..*.setDestination(..))" method="ecrire"/>
+			<aop:before
+				pointcut="execution(* fr..*.setDestination(..))" method="ecrire" />
 		</aop:aspect>
-		
+
+
+	</aop:config>
+	
+	<bean id="chronoAspect" class="fr.ldnr.thomas.aspect.ChronoAspect"></bean>
+	<aop:config>
+		<aop:aspect ref="chronoAspect">
+			<aop:around pointcut="execution(* fr..*.toString(..))"
+				method="ecrire" />
+		</aop:aspect>
+
 
 	</aop:config>
 </beans>
