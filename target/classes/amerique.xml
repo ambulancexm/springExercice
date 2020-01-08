@@ -44,6 +44,10 @@
 	<bean id="BresilService" class="fr.ldnr.thomas.BresilService">
 		<property name="aujourdhui" ref="today"/>
 	</bean>
+	
+	<bean id="UruguayService" class="fr.ldnr.thomas.UruguayService" scope="prototype">
+	
+	</bean>
 
 	<bean id="mexiqueInfo" class="java.lang.String"
 		factory-bean="MexiqueService" factory-method="toString" />
