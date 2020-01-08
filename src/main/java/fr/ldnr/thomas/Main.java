@@ -45,8 +45,8 @@ public class Main {
 			System.out.println("il n'y a pas de trajet");
 		} else {
 			System.out.println("prix " + us.getPrix(jour) + " €");
+			
 		}
-
 		int dispo = (Integer) ctx.getBean("dispo");
 		System.out.println("places dispo " + dispo);
 //
