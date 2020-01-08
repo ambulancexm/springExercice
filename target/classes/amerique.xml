@@ -32,5 +32,12 @@
 	<bean id="dispo" class="java.lang.Integer">
         <constructor-arg value="10" />
 	</bean>
+	
+	<bean id="MexiqueService" class="fr.ldnr.thomas.MexiqueService">
+	<constructor-arg value="949" />
+	</bean>
+	
+	<bean id="today" class="java.time.LocalDate" factory-method="now">
+	</bean>
 
 </beans>
