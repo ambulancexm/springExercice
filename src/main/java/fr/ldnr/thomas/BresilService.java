@@ -22,6 +22,13 @@ public class BresilService {
 		this.aujourdhui = aujourdhui;
 	}
 	
+	public void init() {
+		System.out.println("init!");
+	}
+	
+	public void destroy() {
+		System.out.println("destroy!");
+	}
 	
 	
 }

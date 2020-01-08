@@ -41,7 +41,8 @@
 	</bean>
 	
 <!-- 	injection d'un bean dans un bean -->
-	<bean id="BresilService" class="fr.ldnr.thomas.BresilService">
+	<bean id="BresilService" class="fr.ldnr.thomas.BresilService" init-method="init" destroy-method="destroy"
+	lazy-init="true">
 		<property name="aujourdhui" ref="today"/>
 	</bean>
 	
@@ -51,6 +52,8 @@
 
 	<bean id="mexiqueInfo" class="java.lang.String"
 		factory-bean="MexiqueService" factory-method="toString" />
+		
+		<bean id="UruguayVoyage" class="fr.ldnr.thomas.UruguayVoyage"/>
 
 
 	<bean id="today" class="java.time.LocalDate" factory-method="now">

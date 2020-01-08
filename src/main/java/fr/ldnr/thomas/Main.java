@@ -34,6 +34,9 @@ public class Main {
 		UruguayService ur2 = (UruguayService) ctx.getBean("UruguayService");
 		ur2.setDestination("Mercedes");
 		UruguayService ur3 = ur2;
+		
+		UruguayVoyage uv =  (UruguayVoyage) ctx.getBean("UruguayVoyage");
+		
 		int jour = 22;
 		int rt = cs.getPrix(jour);
 		System.out.print("pour " + jour + " jour" + (jour <= 1 ? " " : "s ") + " au Canada ");
@@ -75,6 +78,8 @@ public class Main {
 		System.out.println(ur2.toString());
 		
 		System.out.println(ur3.toString());
+		System.out.println("\n\nliste des villes");
+		uv.affiche();
 		
 		ctx.close();
 	}
