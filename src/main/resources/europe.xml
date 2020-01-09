@@ -30,6 +30,10 @@
 	<bean id="espagneService" class="fr.ldnr.thomas.EspagneService">
 		<constructor-arg ref="sqlTemplate" />
 	</bean>
+	
+	<bean id="italieService" class="fr.ldnr.thomas.ItalieService" autowire="byType">
+	
+	</bean>
 
 	<bean id="gemfireCache"
 		class="org.springframework.data.gemfire.CacheFactoryBean">

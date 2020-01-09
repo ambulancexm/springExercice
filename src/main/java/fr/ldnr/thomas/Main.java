@@ -90,6 +90,9 @@ public class Main {
 		es.toString();
 //		es.addDestination();
 		es.afficheList();
+		
+		ItalieService its = (ItalieService) ctx.getBean("italieService");
+		its.Affiche();
 		ctx.close();
 	}
 
