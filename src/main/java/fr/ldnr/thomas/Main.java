@@ -25,7 +25,9 @@ public class Main {
 		} catch (Exception e) {
 			System.err.println("err");
 		}
-
+//		*****
+//Amerique test
+//		*****
 		CanadaService cs = (CanadaService) ctx.getBean("CanadaService");
 		UsaService us = (UsaService) ctx.getBean("UsaService");
 		BresilService bs = (BresilService) ctx.getBean("BresilService");
@@ -80,7 +82,12 @@ public class Main {
 		System.out.println(ur3.toString());
 		System.out.println("\n\nliste des villes");
 		uv.affiche();
+//		*****
+//		Europe test
+//		*****
 		
+		EspagneService es = (EspagneService) ctx.getBean("espagneService");
+		es.toString();
 		ctx.close();
 	}
 
