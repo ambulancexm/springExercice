@@ -14,19 +14,37 @@
 	https://www.springframework.org/schema/aop/spring-aop.xsd
 	http://www.springframework.org/schema/tx
 	https://www.springframework.org/schema/tx/spring-tx.xsd">
-<!-- 	<import resource="classpath:spring.xml" /> -->
-	
-	<bean id="sqlDS" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-	<property name="driverClassName" value="org.sqlite.JDBC"/>
-	<property name="url" value="jdbc:sqlite:europe.db"/>
+	<!-- <import resource="classpath:spring.xml" /> -->
+
+	<bean id="sqlDS"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.sqlite.JDBC" />
+		<property name="url" value="jdbc:sqlite:europe.db" />
 	</bean>
-	
-	<bean id="sqlTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
-	<constructor-arg ref="sqlDS"/>
+
+	<bean id="sqlTemplate"
+		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg ref="sqlDS" />
 	</bean>
-	
+
 	<bean id="espagneService" class="fr.ldnr.thomas.EspagneService">
-	<constructor-arg ref="sqlTemplate"/>
-	</bean>	
-	</beans>
+		<constructor-arg ref="sqlTemplate" />
+	</bean>
+
+	<bean id="gemfireCache"
+		class="org.springframework.data.gemfire.CacheFactoryBean">
+		<property name="properties">
+			<props>
+				<prop key="log-level">info</prop>
+				<prop key="mcast-port">0</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="gemfireRegion"
+		class="org.springframework.data.gemfire.LocalRegionFactoryBean">
+		<property name="name" value="gemfireRegion" />
+		<property name="cache" ref="gemfireCache" />
+	</bean>
+
+</beans>
 	
