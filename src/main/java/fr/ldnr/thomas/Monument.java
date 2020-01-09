@@ -23,7 +23,12 @@ public class Monument {
 		this.ville = ville;
 		this.accueil = accueil;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Monument [nom=" + nom + ", ville=" + ville + ", accueil=" + accueil + "]";
+	}
+
 	@Id
 	public String getNom() {
 		return nom;
