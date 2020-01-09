@@ -88,6 +88,7 @@ public class Main {
 		
 		EspagneService es = (EspagneService) ctx.getBean("espagneService");
 		es.toString();
+		es.affiche();
 		ctx.close();
 	}
 
